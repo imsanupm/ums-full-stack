@@ -8,6 +8,8 @@ import Home  from "./pages/Home.jsx";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PublicRoute from "./components/PublicRoute";
 import UpdateProfile from "./pages/UpdateProfile.jsx";
+import AdminDashboard from "./pages/AdminDashboard.jsx";
+import { Counter } from "./Counnter.jsx";
 
 function App() {
   
@@ -21,6 +23,13 @@ function App() {
       <Route path="/login" element={<PublicRoute><SignIn/></PublicRoute>}/>
       <Route path="/" element={<ProtectedRoute><Home/></ProtectedRoute>}/>
       <Route path="/updateProfile" element={<UpdateProfile/>} />
+     </Routes>
+
+     <Routes>
+      <Route path="/admin/adminDashboard" element={<AdminDashboard/>}/>
+     </Routes>
+     <Routes>
+      <Route path="/couter" element={<Counter/>}/>
      </Routes>
 
      

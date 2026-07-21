@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import API from '../api/axios';
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCredentials } from '../redux/slices/authSlice';
 
 export default function SignIn() {
+    
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -48,6 +49,8 @@ export default function SignIn() {
     };
 
     return (
+        <>
+
         <div className="min-h-screen bg-black relative overflow-hidden flex items-center justify-center px-4 sm:px-6 lg:px-8">
             {/* Animated gradient background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -168,5 +171,6 @@ export default function SignIn() {
         }
       `}</style>
         </div>
+        </>
     );
 }
